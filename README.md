@@ -1,12 +1,8 @@
-# Project Name
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+# REDUX FEEDBACK LOOP
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
-
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+For this project, I will be creating a feedback form to allow users to leave their feedback. Feedback will be collected over a multi-part form which will display 4 different types of views. Starting with, 'Add New Feedback Page' which the user will be able to input their info and clicking next to go to each question. At the end, the user will enter a 'Review Your Feedback Page' where they will be able to see all the data they have entered. When the user hits submit all the information with the completed feedback will be sent to the server. All the data will be stored into an SQL database. Which then the user will see a 'Submission Success Page' this allows the user to know that their feedback has been sent for further evaluation.
 
 ## License
 
