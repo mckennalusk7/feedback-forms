@@ -18,7 +18,10 @@ class ContentPage extends Component {
   };
 
   onContentClick = (event) => {
-    this.props.dispatch({ type: "SET_CONTENT_FEEDBACK", payload: this.state });
+    this.props.dispatch({
+      type: "SET_UNDERSTANDING_FEEDBACK",
+      payload: this.state,
+    });
     this.props.history.push("/supported");
   };
 
@@ -36,6 +39,4 @@ class ContentPage extends Component {
   }
 }
 
-const mapStoreToProps = (store) => ({ store });
-
-export default connect(mapStoreToProps)(ContentPage);
+export default connect()(ContentPage);

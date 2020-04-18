@@ -16,17 +16,23 @@ const feelingReducer = (state = {}, action) => {
 };
 
 const contentReducer = (state = {}, action) => {
-  if (action.type === "SET_CONTENT_FEEDBACK") {
+  if (action.type === "SET_UNDERSTANDING_FEEDBACK") {
     return { ...action.payload };
   }
   return state;
 };
 
 const supportedReducer = (state = {}, action) => {
+  if (action.type === "SET_SUPPORT_FEEDBACK") {
+    return { ...action.payload };
+  }
   return state;
 };
 
 const commentReducer = (state = {}, action) => {
+  if (action.type === "SET_COMMENTS_FEEDBACK") {
+    return { ...action.payload };
+  }
   return state;
 };
 
