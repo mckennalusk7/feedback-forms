@@ -9,13 +9,16 @@ import { Provider } from "react-redux";
 import logger from "redux-logger";
 
 const feelingReducer = (state = {}, action) => {
-  if (action.feelings === "SET_FEELINGS_TYPE") {
+  if (action.type === "SET_FEELINGS_FEEDBACK") {
     return action.payload;
   }
   return state;
 };
 
 const contentReducer = (state = {}, action) => {
+  if (action.type === "SET_CONTENT_FEEDBACK") {
+    return { ...action.payload };
+  }
   return state;
 };
 

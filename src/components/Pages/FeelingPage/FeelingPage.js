@@ -18,7 +18,7 @@ class FeelingPage extends Component {
     );
   };
   onFeelingsClick = (input) => (event) => {
-    this.props.dispatch({ type: "SET_FEELINGS_TYPE", payload: input });
+    this.props.dispatch({ type: "SET_FEELINGS_FEEDBACK", payload: input });
     this.props.history.push("content");
   };
 

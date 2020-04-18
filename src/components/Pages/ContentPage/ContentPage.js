@@ -7,7 +7,6 @@ class ContentPage extends Component {
   };
 
   onInputChange = (input) => (event) => {
-    console.log(input);
     this.setState(
       {
         [input]: event.target.value,
@@ -18,9 +17,10 @@ class ContentPage extends Component {
     );
   };
 
-  // onContentClick =(input) => (event) => {
-
-  // }
+  onContentClick = (event) => {
+    this.props.dispatch({ type: "SET_CONTENT_FEEDBACK", payload: this.state });
+    this.props.history.push("/supported");
+  };
 
   render() {
     return (
@@ -29,7 +29,7 @@ class ContentPage extends Component {
 
         <div>
           <input type="text" onChange={this.onInputChange("content")}></input>
-          <button onClick={this.onContentClick("nextpage")}> Next </button>
+          <button onClick={this.onContentClick}> Next </button>
         </div>
       </div>
     );
