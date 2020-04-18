@@ -24,7 +24,15 @@ const commentReducer = (state = {}, action) => {
   return state;
 };
 
-const storeInstance = createStore(combineReducers({}), applyMiddleware(logger));
+const storeInstance = createStore(
+  combineReducers({
+    feelingReducer,
+    contentReducer,
+    supportedReducer,
+    commentReducer,
+  }),
+  applyMiddleware(logger)
+);
 
 ReactDOM.render(
   <Provider store={storeInstance}>
