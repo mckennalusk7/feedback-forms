@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 class FeelingPage extends Component {
-  onFeelingsClick = (type) => (event) => {
-    this.props.dispatch({ type: "SET_FEELINGS_TYPE", payload: type });
+  onFeelingsClick = (feelings) => (event) => {
+    this.props.dispatch({ type: "SET_FEELINGS_TYPE", payload: feelings });
     this.props.history.push("content");
   };
 
