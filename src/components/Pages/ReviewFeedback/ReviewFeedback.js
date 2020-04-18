@@ -1,11 +1,28 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import axios from "axios";
 
 class ReviewFeedback extends Component {
-  render() {
-    submitFeedback = (event) => {
-      const feedback = {};
+  submitFeedback = (event) => {
+    const feedback = {
+      feeling: this.props.store.feelingReducer.feeling,
+      understanding: this.props.store.contentReducer.content,
+      support: this.props.store.supportedReducer.support,
+      comments: this.props.store.commentReducer.comments,
     };
+
+    axios
+      .post("/feedback", feedback)
+      .then((response) => {
+        console.log(response.data);
+        this.props.history.push("/");
+      })
+      .catch((err) => {
+        console.warn(err);
+      });
+  };
+
+  render() {
     return (
       <div>
         <h2>Review of Feedback</h2>
