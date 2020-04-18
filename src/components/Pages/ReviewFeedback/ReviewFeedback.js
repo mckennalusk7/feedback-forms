@@ -8,10 +8,23 @@ class ReviewFeedback extends Component {
         <h2>Review of Feedback</h2>
 
         <div>
-          <h4> {this.props.store.feelingReducer.feeling}</h4>
-          <h4> {this.props.store.contentReducer.content}</h4>
-          <h4> {this.props.store.supportReducer.support}</h4>
-          <h4> {this.props.store.commentReducer.comments}</h4>
+          <h3> How are you feeling?</h3>
+          <h4>{this.props.store.feelingReducer.feeling}</h4>
+        </div>
+        <div>
+          <h3> Are you understanding the content?</h3>
+          <h4>{this.props.store.contentReducer.content}</h4>
+        </div>
+        <div>
+          <h3> Do you feel supported? </h3>
+          <h4>{this.props.store.supportedReducer.support}</h4>
+        </div>
+        <div>
+          <h3> Any additional comments?</h3>
+          <h4>{this.props.store.commentReducer.comments}</h4>
+        </div>
+        <div>
+          <button> Submit</button>
         </div>
       </div>
     );
