@@ -3,6 +3,9 @@ import { connect } from "react-redux";
 
 class ReviewFeedback extends Component {
   render() {
+    submitFeedback = (event) => {
+      const feedback = {};
+    };
     return (
       <div>
         <h2>Review of Feedback</h2>
@@ -24,7 +27,7 @@ class ReviewFeedback extends Component {
           <h4>{this.props.store.commentReducer.comments}</h4>
         </div>
         <div>
-          <button> Submit</button>
+          <button onClick={this.submitFeedback}> Submit</button>
         </div>
       </div>
     );
