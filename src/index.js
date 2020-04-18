@@ -8,6 +8,22 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import logger from "redux-logger";
 
+const feelingReducer = (state = {}, action) => {
+  return state;
+};
+
+const contentReducer = (state = {}, action) => {
+  return state;
+};
+
+const supportedReducer = (state = {}, action) => {
+  return state;
+};
+
+const commentReducer = (state = {}, action) => {
+  return state;
+};
+
 const storeInstance = createStore(combineReducers({}), applyMiddleware(logger));
 
 ReactDOM.render(
