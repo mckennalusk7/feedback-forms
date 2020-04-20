@@ -31,7 +31,12 @@ class ContentPage extends Component {
         <h3> How are you understanding the content?</h3>
 
         <div>
-          <input type="text" onChange={this.onInputChange("content")}></input>
+          <input
+            type="number"
+            min="1"
+            max="5"
+            onChange={this.onInputChange("content")}
+          ></input>
           <button onClick={this.onContentClick}> Next </button>
         </div>
       </div>

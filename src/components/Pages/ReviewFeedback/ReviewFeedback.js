@@ -6,7 +6,7 @@ class ReviewFeedback extends Component {
   submitFeedback = (event) => {
     const feedback = {
       feeling: this.props.store.feelingReducer.feeling,
-      understanding: this.props.store.contentReducer.content,
+      content: this.props.store.contentReducer.content,
       support: this.props.store.supportedReducer.support,
       comments: this.props.store.commentReducer.comments,
     };

@@ -27,7 +27,12 @@ class SupportedPage extends Component {
         <h3> Are you feeling supported?</h3>
 
         <div>
-          <input type="text" onChange={this.onInputChange("support")}></input>
+          <input
+            type="number"
+            min="1"
+            max="5"
+            onChange={this.onInputChange("support")}
+          ></input>
           <button onClick={this.onSupportClick}> Next </button>
         </div>
       </div>

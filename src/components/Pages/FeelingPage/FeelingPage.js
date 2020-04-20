@@ -28,7 +28,12 @@ class FeelingPage extends Component {
         <h3> How are you Feeling?</h3>
 
         <div>
-          <input type="text" onChange={this.onInputChange("feeling")}></input>
+          <input
+            type="number"
+            min="1"
+            max="5"
+            onChange={this.onInputChange("feeling")}
+          ></input>
           <button onClick={this.onFeelingsClick("nextpage")}> Next </button>
         </div>
       </div>
