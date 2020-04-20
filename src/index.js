@@ -7,49 +7,37 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import logger from "redux-logger";
 
-const feedbackInitialState = {
-  feeling: 0,
-  content: 0,
-  support: 0,
-  comments: "",
-};
-
-const feelingReducer = (state = feedbackInitialState, action) => {
+const feelingReducer = (state = {}, action) => {
   if (action.type === "SET_FEELINGS_FEEDBACK") {
-    return {
-      ...state,
-      feeling: action.payload,
-    };
+    return action.payload;
   }
   return state;
 };
 
-const contentReducer = (state = feedbackInitialState, action) => {
+const contentReducer = (state = {}, action) => {
   if (action.type === "SET_UNDERSTANDING_FEEDBACK") {
-    return {
-      ...state,
-      content: action.payload,
-    };
+    return { ...action.payload };
   }
   return state;
 };
 
-const supportedReducer = (state = feedbackInitialState, action) => {
+const supportedReducer = (state = {}, action) => {
   if (action.type === "SET_SUPPORT_FEEDBACK") {
-    return {
-      ...state,
-      support: action.payload,
-    };
+    return { ...action.payload };
   }
   return state;
 };
 
-const commentReducer = (state = feedbackInitialState, action) => {
+const commentReducer = (state = {}, action) => {
   if (action.type === "SET_COMMENTS_FEEDBACK") {
-    return {
-      ...state,
-      comments: action.payload,
-    };
+    return { ...action.payload };
+  }
+  return state;
+};
+
+const completedReducer = (state = {}, action) => {
+  if (action.type === "SET_COMPLETED_PAGE") {
+    return { ...action.payload };
   }
   return state;
 };
@@ -60,6 +48,7 @@ const storeInstance = createStore(
     contentReducer,
     supportedReducer,
     commentReducer,
+    completedReducer,
   }),
   applyMiddleware(logger)
 );

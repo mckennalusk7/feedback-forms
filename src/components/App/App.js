@@ -7,6 +7,7 @@ import ContentPage from "../Pages/ContentPage/ContentPage";
 import SupportedPage from "../Pages/SupportedPage/SupportedPage";
 import CommentsPage from "../Pages/CommentsPage/CommentsPage";
 import ReviewFeedback from "../Pages/ReviewFeedback/ReviewFeedback";
+import CompletedPage from "../Pages/CompletedPage/CompletedPage";
 
 class App extends Component {
   render() {
@@ -22,10 +23,11 @@ class App extends Component {
           </header>
           <div>
             <Route exact path="/" component={FeelingPage} />
-            <Route exact path="/content" component={ContentPage} />
-            <Route exact path="/supported" component={SupportedPage} />
-            <Route exact path="/comments" component={CommentsPage} />
-            <Route exact path="/review" component={ReviewFeedback} />
+            <Route path="/content" component={ContentPage} />
+            <Route path="/supported" component={SupportedPage} />
+            <Route path="/comments" component={CommentsPage} />
+            <Route path="/review" component={ReviewFeedback} />
+            <Route path="/completed" component={CompletedPage} />
           </div>
 
           <br />

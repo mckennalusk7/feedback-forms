@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 import axios from "axios";
 
 class ReviewFeedback extends Component {
-  submitFeedback = (event) => {
-    const feedback = {
+  submitFeedback = () => {
+    const dataForServer = {
       feeling: this.props.store.feelingReducer.feeling,
       content: this.props.store.contentReducer.content,
       support: this.props.store.supportedReducer.support,
@@ -12,10 +12,10 @@ class ReviewFeedback extends Component {
     };
 
     axios
-      .post("/feedback", feedback)
+      .post("/feedback", dataForServer)
       .then((response) => {
         console.log(response.data);
-        this.props.history.push("/");
+        this.props.history.push("/completed");
       })
       .catch((err) => {
         console.warn(err);
